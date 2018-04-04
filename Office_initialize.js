@@ -1,9 +1,4 @@
-﻿/// <reference path="../Office.Runtime.js" />
-/// <reference path="../Excel.js" />
-/// <reference path="./Udf_definitions.js" />
-/// <reference path="./Udf.js" />
-
-(function () {
+﻿(function () {
 	"use strict";
 
 	Office.initialize = function (reason) {
