@@ -2,38 +2,48 @@
 	return num + 42;
 }
 
-function add20(num) {
-	return num + 20;
-}
-
-function add30(num) {
+function ADD42WAIT(num) {
 	return new OfficeExtension.Promise(function(resolve) {
 		setTimeout(function() {
-			resolve(num + 30);
-		}, 1);
+			resolve(num + 42);
+		}, 250);
 	});
 }
 
-function isEven(num) {
+function ISEVEN(num) {
 	return num % 2 == 0;
 }
 
-function getDay() {
+function GETDAY() {
 	var d = new Date();
 	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	return days[d.getDay()];
 }
 
-function getDummyString(len) {
-	var base = "123456789 ";
-
-	var div = Math.floor(len / 10);
-	var rem = len - (div * 10);
-
-	var result = "";
-	for (var i = 0; i < div; i++) {
-		result += base;
+function INCREMENTVALUE(increment, caller){    
+	var result = 0;
+	var myInterval = setInterval(function(){
+		result += increment;
+		caller.setResult(result);
+	}, 1000);
+	caller.onCanceled = function(){
+		clearInterval(myInterval);
 	}
-	result += base.substr(0, rem);
-	return result;
 }
+
+function SECONDHIGHEST(range){
+	var highest = range[0][0], secondHighest = range[0][0];
+	for(var i = 0; i < range.length;i++){
+		for(var j = 0; j < range[i].length;j++){
+			if(range[i][j] >= highest){
+				secondHighest = highest;
+				highest = range[i][j];
+			}
+			else if(range[i][j] >= secondHighest){
+				secondHighest = range[i][j];
+			}
+		}
+	}
+	return secondHighest;
+}
+

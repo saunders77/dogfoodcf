@@ -21,8 +21,8 @@
 			}
 		},
 		{
-			"name": "add20", 
-			"description":  "Sync function marked as async",
+			"name": "ADD42WAIT", 
+			"description":  "asynchronously wait 250ms, then add 42",
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"type": "number",
@@ -41,27 +41,7 @@
 			}
 		},
 		{
-			"name": "add30", 
-			"description":  "Async function",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"type": "number",
-				"dimensionality": "scalar"
-			},
-			"parameters": [
-				{
-					"name": "num",
-					"description": "Number",
-					"type": "number",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": false
-			}
-		},
-		{
-			"name": "isEven", 
+			"name": "ISEVEN", 
 			"description":  "Determines whether a number is even",
 			"helpUrl": "http://dev.office.com",
 			"result": {
@@ -71,7 +51,7 @@
 			"parameters": [
 				{
 					"name": "num",
-					"description": "First",
+					"description": "the number to be evaluated",
 					"type": "number",
 					"dimensionality": "scalar"
 				}
@@ -81,7 +61,7 @@
 			}
 		},
 		{
-			"name": "getDay",
+			"name": "GETDAY",
 			"description": "Gets the day of the week",
 			"helpUrl": "http://dev.office.com",
 			"result": {
@@ -89,25 +69,45 @@
 			},
 			"parameters": [],
 			"options": {
-				"sync": true,
-				"stream": false,
-				"volatile": true
+				"sync": true
 			}
 		},
 		{
-			"name": "getDummyString", 
-			"description": "Returns a string of the given length",
+			"name": "INCREMENTVALUE", 
+			"description":  "Counts up from zero",
 			"helpUrl": "http://dev.office.com",
 			"result": {
-				"type": "string",
+				"type": "number",
 				"dimensionality": "scalar"
 			},
 			"parameters": [
 				{
-					"name": "len",
-					"description": "Length",
+					"name": "increment",
+					"description": "the number to be added each time",
 					"type": "number",
 					"dimensionality": "scalar"
+				}
+			],
+			"options": {
+				"sync": false,
+				"stream": true,
+				"cancelable": true
+			}
+		},
+		{
+			"name": "SECONDHIGHEST", 
+			"description":  "gets the second highest number from a range",
+			"helpUrl": "http://dev.office.com",
+			"result": {
+				"type": "number",
+				"dimensionality": "scalar"
+			},
+			"parameters": [
+				{
+					"name": "range",
+					"description": "the input range",
+					"type": "number",
+					"dimensionality": "matrix"
 				}
 			],
 			"options": {
