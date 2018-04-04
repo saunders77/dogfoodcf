@@ -1,8 +1,8 @@
 ﻿{
 	"functions": [
 		{
-			"name": "add10", 
-			"description":  "Adds 10 to the input number",
+			"name": "ADD42", 
+			"description":  "Adds 42 to the input number",
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"type": "number",

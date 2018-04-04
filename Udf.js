@@ -1,5 +1,5 @@
-﻿function add10(num) {
-	return num + 10;
+﻿function ADD42(num) {
+	return num + 42;
 }
 
 function add20(num) {
