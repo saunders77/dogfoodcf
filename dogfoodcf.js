@@ -2,11 +2,12 @@
 	return num + 42;
 }
 
-function ADD42WAIT(num) {
+function ADD42ASYNC(num) {
+	// waits 1 second before returning the result
 	return new OfficeExtension.Promise(function(resolve) {
 		setTimeout(function() {
 			resolve(num + 42);
-		}, 250);
+		}, 1000);
 	});
 }
 
